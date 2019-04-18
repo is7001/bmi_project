@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    ID : {{object.id}}<br>
+    Weight : {{object.weight}}<br>
+    Height : {{Object.height}}<br>
+    BMI : {{object.bmi_score}}<br>
+    Created : {{object.created}}<br>
+    <a href="{% url 'update' object.id %}">수정</a><br>
+    <a href="{% url 'delete' object.id %}">삭제</a><br>
+</body>
+</html>

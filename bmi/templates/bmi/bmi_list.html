@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <!-- # 09.
+        템플릿에서 다루는 변수의 종류
+        object_list : list 페이지처럼 같은 형태의 데이터가 여러개 넘어오는 경우 (글 목록)
+        object : 글 내용 확인 등 한 가지만 넘어오는 경우 (글 보기, 삭제, 수정)
+
+     -->
+
+    <!-- # 13. 추가 기능을 추가한다.-->
+    <a href="{% url 'create' %}">추가</a>
+    <table>
+    {% for object in object_list %}
+        <tr>
+            <!--
+            # 11. url을 detail로 뿌린다.
+            -->
+            <td><a href="{% url 'detail' object.id %}">{{object.id}}</a> </td>
+            <td>{{object.weight}}</td>
+            <td>{{object.height}}</td>
+            <td>{{object.bmi_score}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+
+</body>
+</html>
